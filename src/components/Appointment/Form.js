@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 
 export default function Form(props) {
   const [student, setStudent] = useState(props.student || "");
-  const [interviewer, setInterviewer] = useState(props.interviewer && props.interviewer.id || null);
+  const [interviewer, setInterviewer] = useState(props.interviewer ? props.interviewer.id : null);
   const reset = () => {
     setStudent('')
     setInterviewer(null)

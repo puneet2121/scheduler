@@ -28,7 +28,9 @@ export default function Appointment(props) {
       interviewer
     };
     transition(SAVING)
-    props.bookInterview(props.id,interview).then(() => transition(SHOW)).catch(error => transition(ERROR_SAVE,true))
+    props.bookInterview(props.id,interview)
+    .then(() => transition(SHOW))
+    .catch(error => transition(ERROR_SAVE,true))
     
   }
   function deleting(name,interviewer) {
@@ -37,7 +39,9 @@ export default function Appointment(props) {
       interviewer
     };
     transition(DELETING)
-    props.cancelInterview(props.id,interview).then(() => transition(EMPTY)).catch(error => transition(ERROR_DELETE,true))
+    props.cancelInterview(props.id,interview)
+    .then(() => transition(EMPTY))
+    .catch(error => transition(ERROR_DELETE,true))
   }
   console.log('props-----',props)
   return (
