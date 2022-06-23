@@ -2,7 +2,6 @@ import React from "react";
 import classNames from "classnames";
 
 import "components/Button.scss";
-import { portalSuspended } from "pg-protocol/dist/messages";
 
 export default function Button(props) {
    let buttonClass = classNames({

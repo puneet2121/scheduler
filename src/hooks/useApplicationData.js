@@ -1,8 +1,6 @@
 import axios from "axios";
 
-import React,{ useEffect, useState } from "react";
-import { getAppointmentsForDay } from "helpers/selectors";
-
+import { useEffect, useState } from "react";
 export default function useApplicationData(props){ 
 
  const [state, setState] = useState({
@@ -18,9 +16,7 @@ const updateSpot = (state,id) => {
   const nullAppointments = currentDay.appointments.filter((id) => !state.appointments[id].interview)
   const spotsRemaining = nullAppointments.length
   const newDay = {...currentDay,spots:spotsRemaining}
-  console.log(spotsRemaining)
   const newDays = state.days.map((d) => d.name === state.day ? newDay : d)
-  console.log(newDays)
   return newDays;
 }
 
