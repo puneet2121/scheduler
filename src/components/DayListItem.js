@@ -11,14 +11,17 @@ export default function DayListItem(props) {
     }
     return result;
   }
-  let dayClass = classNames('day-list__item',{
-    'day-list__item--selected':props.selected,
-    'day-list__item--full':props.spots === 0
+  let dayClass = classNames('day-list__item', {
+    'day-list__item--selected': props.selected,
+    'day-list__item--full': props.spots === 0
   });
-  
+
   return (
-    <li className={dayClass} onClick={() => props.setDay(props.name)} selected={props.selected}>
-      <h2>{props.name}</h2> 
+    <li className={dayClass}
+      onClick={() => props.setDay(props.name)}
+      selected={props.selected}
+      data-testid="day">
+      <h2>{props.name}</h2>
       <h3>{formatSpots(props.spots)} remaining</h3>
     </li>
   );
