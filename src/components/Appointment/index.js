@@ -59,7 +59,7 @@ export default function Appointment(props) {
           student={props.interview.student}
           interviewer={props.interview.interviewer}
           interviewers={props.interviewers}
-          onCancel={() => back()}
+          onCancel={back}
           onSave={save}
         />
       )}
@@ -67,7 +67,7 @@ export default function Appointment(props) {
         <Error errormessage={"error while saving"} onClose={back} />
       )}
       {mode === ERROR_DELETE && (
-        <Error errormessage={"Cannot delete the appointment"} onClose={back} />
+        <Error errormessage={"Cannot delete the appointment"} onClose={() => transition(SHOW)}/>
       )}
       {mode === SHOW && (
         <Show
